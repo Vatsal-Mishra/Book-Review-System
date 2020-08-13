@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block heading %}
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT7uGKzvJMaJIAhxLG7uqtXt0jzzPQD5oK9EQ&usqp=CAU"align="right">
+BOOKS REVEIW SYSTEM
+{% endblock %}
+{%block body%}
+<h2>HOMEPAGE</h2>
+<p>Hello!!</p><p style="font-size:25px;color:yellow;">{{username}}</p> <p>WELCOME  to our BOOK REVEIW SYSTEM.At Book Review System ,we know the facination of readers and the quality time they spend
+  reading a particular book.But sometimes it is very sad ,that the reader expectations does'nt meet
+  with the books.<br>Here we have solve this problem and will try to  give you with the accurate reveiw for the book of your choice to enhance your reading experience.<br>Search for the revelant book ,author in below search tab---:</p>
+  <form action="{{url_for('search')}}" method='post'>
+    <div class="active-pink-3 active-pink-4 mb-4">
+    <input class="form-control" type="text" name="item" placeholder="TYPE isbn or author name or title" aria-label="Search">
+  </div>
+      <button type="submit" class="btn btn-primary">SEARCH</button>
+  </form>
+  <h2>{{msg}}</h2>
+  <ul class="list-group">
+      {% for book in searchitem %}
+      <a href="{{ url_for('bookpage',id=book.id,title=book.title) }}"><li class="list-group-item" style="  list-style-type: circle;">TITLE-{{book.title}} AUTHOR-{{book.author}} ISBN-{{book.isbn}}</li></a>
+      {% endfor %}
+   </ul>
+  <a href="{{url_for('logout')}}"<button type="submit" class="btn btn-primary" style="float:right;">LOGOUT</button></a>
+{%endblock%}

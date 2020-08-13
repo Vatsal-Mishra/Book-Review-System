@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+{% block heading %}
+REVIEW CENTRE
+{% endblock %}
+{% block body %}
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSewIEQsEKPJPVDAFRbtZ1kIvBHbPOcOWalqg&usqp=CAU"align="right">
+<ul class="list-group">
+   {% for book in aboutbook %}
+      <li class="list-group-item" style="  list-style-type: circle;">TITLE-{{book.title}}<br>AUTHOR-{{book.author}}<br>ISBN-{{book.isbn}}<br> YEAR-{{book.year}}</li>
+      <ol>
+        <h2>REVIEWS---</h2>
+      {%for f in h %}
+      <li class="list-group-item" style="list-style-type: circle;color:#DC143C">{{f.review}}      RATING--{{f.rate}}     BY----{{f.username}}  </li>
+      {% endfor %}
+    </ol>
+<form action="{{url_for('bookpage',id=book.id,title=book.title)}}" method='post'>
+<div class="form-group">
+   <label for="exampleFormControlSelect1"><h2>SELECT THE RATING FOR THE BOOK--:</h2></label>
+   <select  name="rate"class="form-control" id="exampleFormControlSelect1">
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+     <option>5</option>
+   </select>
+ </div>
+ <div class="active-pink-3 active-pink-4 mb-4">
+ <input class="form-control" type="text" name="review" placeholder="enter your review">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endfor %}
+</ul>
+{{msg}}
+  <a href="{{url_for('logout')}}"<button type="submit" class="btn btn-primary"  style="float:right;">LOGOUT</button></a>
+{% endblock %}

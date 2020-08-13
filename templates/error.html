@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block heading %}
+ERROR
+{% endblock %}
+{%block body%}
+{{message}}<br>
+  <a href="{{ url_for('register') }}">Don't have an account?<br>Register here</a>
+  <p>OR</p>
+  <a href="{{ url_for('login') }}">LOGIN AGAIN</a>
+{%endblock%}

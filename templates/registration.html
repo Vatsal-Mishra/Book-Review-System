@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block heading %}
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAeFu7WiHyOE-ro19T_zqzyHiAPR_SFMKEwQ&usqp=CAU"align="left">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTRtmK7LD3uZTCtz3oruPsvMqZ9Bzr0rgLDA&usqp=CAU"align="right">
+ BOOKS REVEIW SYSTEM
+{% endblock %}
+{% block body %}
+<h2>REGISTER HERE</h2>
+<form action="{{ url_for('insert') }}" method="post">
+   <div class="form-group row">
+    <label for="inputfirstname" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="inputfirstname" class="form-control" id="inputfirstname" placeholder="First Name">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputlastname" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="inputlastname" class="form-control" id="inputlastname" placeholder="Last Name">
+    </div>
+  </div>
+  <div class="form-group row">
+   <label for="username" class="col-sm-2 col-form-label">Username</label>
+   <div class="col-sm-10">
+     <input type="text" name="username" class="form-control" id="username" placeholder="username">
+   </div>
+  </div>
+  <div class="form-group row">
+   <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+   <div class="col-sm-10">
+     <input type="email" name="inputEmail3" class="form-control" id="inputEmail3" placeholder="Email">
+   </div>
+ </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Create Password</label>
+    <div class="col-sm-10">
+      <input type="password" name="inputPassword3" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Register in</button>
+    </div>
+  </div>
+</form>
+  <a href="{{ url_for('login') }}">Already have an account,login here</a>
+{% endblock %}
+</body>
+</html>
