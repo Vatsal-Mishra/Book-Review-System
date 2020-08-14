@@ -6,3 +6,8 @@ if nothing found a message is diplayed.
 From the set suggestation user can go to particular book for more details to see or give the reviews.
 A user can give a single review for  a particular book.
 There is also a logout button if user want to end its session.
+I have used database MYSQL on heroku database as hoobby project.
+It consists of three tables -users,books,reviews.
+Users have all the details for the users
+Books have all the details of books.
+Reviews have all the reviews given by users.
